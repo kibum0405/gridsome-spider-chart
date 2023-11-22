@@ -10,6 +10,9 @@
         </div>
         <h1 class="text-4xl text-center lg:text-5xl">
           Great Documentation starts here.
+          <v-card>v-card
+            <v-icon>mdi-close</v-icon>
+          </v-card>
         </h1>
         <p class="text-xl font-medium text-center">
           Perfect Lighthouse score out of the box. Easy to set-up. Dark mode included.

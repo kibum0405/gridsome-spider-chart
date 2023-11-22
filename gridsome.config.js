@@ -46,6 +46,9 @@ module.exports = {
   },
   plugins: [
     {
+      use: '~/plugins/vuetify',
+    },
+    {
       use: '@gridsome/source-filesystem',
       options: {
         baseDir: './content',
