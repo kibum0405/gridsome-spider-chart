@@ -1,8 +1,6 @@
 ---
 description: ''
-sidebar: 'docs'
-prev: '/docs/deploying/'
-next: '/docs/sidebar/'
+sidebar: 'allguide'
 ---
 
 # Settings

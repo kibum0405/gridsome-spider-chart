@@ -29,7 +29,6 @@
         >
           <slot />
         </div>
-
       </main>
 
     </div>

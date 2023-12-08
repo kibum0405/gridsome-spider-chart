@@ -1,8 +1,6 @@
 ---
 description: ''
-sidebar: 'docs'
-prev: '/docs/'
-next: '/docs/writing-content/'
+sidebar: 'allguide'
 ---
 
 # Installation

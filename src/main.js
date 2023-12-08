@@ -1,11 +1,22 @@
-// This is the main.js file. Import global CSS and scripts here.
-// The Client API can be used here. Learn more: gridsome.org/docs/client-api
-import DefaultLayout from '~/layouts/Default.vue'
-import vuetify from '~/plugins/vuetify';
+// main.js
+import GridsomeLayout from '~/layouts/GridsomeLayout.vue';
+import VuetifyLayout from '~/layouts/VuetifyLayout.vue';
+import Vuetify from 'vuetify';
+import 'vuetify/dist/vuetify.min.css';
 
-export default function (Vue, { router, head, isClient }) {
-  // Set default layout as a global component
-  Vue.component('Layout', DefaultLayout);
+export default function (Vue, { appOptions, router, head, isClient }) {
+  Vue.use(Vuetify);
+
+  const vuetify = new Vuetify({
+    // Vuetify 옵션을 여기에 추가할 수 있습니다.
+  });
+
+  // Vue 인스턴스 옵션에 vuetify 추가
+  appOptions.vuetify = vuetify;
+
+  // 기본 및 Vuetify 레이아웃을 글로벌 컴포넌트로 등록
+  Vue.component('GridsomeLayout', GridsomeLayout);
+  Vue.component('VuetifyLayout', VuetifyLayout);
 
   router.beforeEach((to, _from, next) => {
     head.meta.push({
@@ -13,7 +24,8 @@ export default function (Vue, { router, head, isClient }) {
       name: 'og:url',
       content: process.env.GRIDSOME_BASE_PATH + to.path,
     });
-    next()
+    next();
   });
-  return { vuetify };
+
+  // appOptions 객체를 수정하여 반환할 필요가 없음
 }

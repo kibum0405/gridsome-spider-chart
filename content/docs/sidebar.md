@@ -1,7 +1,6 @@
 ---
 description: ''
-sidebar: 'docs'
-prev: '/docs/settings/'
+sidebar: 'allguide'
 ---
 
 # Sidebar
