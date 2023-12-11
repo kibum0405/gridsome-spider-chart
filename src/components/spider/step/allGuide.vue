@@ -15,7 +15,6 @@
                     </v-card>
                 </v-col>
             </v-row>
-            <v-btn color="primary">123</v-btn>
         </div>
     </VuetifyLayout>
 </template>
@@ -91,9 +90,6 @@ export default {
         }
     },
     methods: {
-        goToallGuide() {
-            this.$router.push('/allGuide/');
-        }
     },
 }
 </script>

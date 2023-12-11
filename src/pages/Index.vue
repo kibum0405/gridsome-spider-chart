@@ -1,14 +1,14 @@
 <template>
     <div>
-        <VueMain></VueMain>
+        <spiderMain/>
     </div>
 </template>
 
 <script>
-import VueMain from '../components/spider/step/VueMain.vue'
+import spiderMain from './spiderMain.vue'
 export default {
     components: {
-        VueMain
+        spiderMain
     },
     methods: {
     },
