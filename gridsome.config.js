@@ -90,7 +90,7 @@ module.exports = {
     },
     plugins: [
         {
-        use: '~/plugins/vuetify',
+            use: '/plugins/vuetify',
         },
         {
         use: '@gridsome/source-filesystem',

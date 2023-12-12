@@ -3,7 +3,11 @@ import GridsomeLayout from '~/layouts/GridsomeLayout.vue';
 import VuetifyLayout from '~/layouts/VuetifyLayout.vue';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
-import User from './pages/spider/User.vue';
+import '@mdi/font/css/materialdesignicons.css'
+
+// vue route 컴포넌트 
+import User from './components/spider/User.vue';
+import allGuide from './components/spider/allGuide.vue'
 
 export default function (Vue, { appOptions, router, head, isClient }) {
     Vue.use(Vuetify);
@@ -21,12 +25,6 @@ export default function (Vue, { appOptions, router, head, isClient }) {
     
     router.addRoutes([
         {
-            path: '/:path',
-            name: 'User',
-            component: User,
-            props: true,
-        },
-        {
             path: '/get-the-guide/:tabName/level:levelNumber',
             component: User,
             props: true,
@@ -35,7 +33,18 @@ export default function (Vue, { appOptions, router, head, isClient }) {
             path: '/get-the-guide/reference-architecture',
             component: User,
             props: true,
-        }
+        },
+        {
+            path: '/all-guide',
+            component: allGuide,
+            props: true,
+        },
+        {
+            path: '/:path',
+            name: 'User',
+            component: User,
+            props: true,
+        },
     ])
 
     router.beforeEach((to, _from, next) => {

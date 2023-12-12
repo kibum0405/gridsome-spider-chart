@@ -7,9 +7,11 @@
                     :key="levelIndex"
                     cols="12" sm="6" md="3"
                 >
-                    <v-card :to="level.path">
+                    <v-card :to="level.path"
+                        :style="checkPathMatch(level.path)"
+                    >
                         <div>
-                            <h3>{{ guideItem.name }}</h3>
+                            <div style="font-size:20px; font-weight:700;">{{ guideItem.name }}</div>
                             <div>Level {{ level.level }}</div>
                         </div>
                     </v-card>
@@ -86,10 +88,42 @@ export default {
                         { level: 4, path: '/team-structure/level4' }
                     ]
                 },
-            ]
+            ],
+            registeredUsers: null,
+            registeredUserGoalPath: [],
+            goalLevels: 0,
         }
     },
+    created() {
+        this.loadGoalPath();
+    },
     methods: {
+        loadGoalPath() {
+            const usersData = localStorage.getItem('registeredUsers');
+            if (usersData) {
+                this.registeredUsers = JSON.parse(usersData);
+                if (this.registeredUsers && this.registeredUsers.length > 0 && this.registeredUsers[0].perspectives) {
+                    this.registeredUserGoalPath = this.registeredUsers[0].perspectives.map(perspective => {
+                        return `/${perspective.name_en}/level${perspective.goalLevel}`;
+                    });
+                }
+                console.log(this.registeredUserGoalPath)
+                this.isDataLoaded = true;
+            }
+        },
+        checkPathMatch(path) {
+            if (this.registeredUserGoalPath.includes(path)) {
+                // 조건을 만족하는 경우 사용자 정의 스타일 객체 반환
+                return {
+                    backgroundColor: 'rgba(192, 75, 192, 1)', // 여기에 원하는 배경색을 지정
+                    color: 'white' // 여기에 원하는 글자색을 지정
+                };
+            } else
+            return {
+                backgroundColor: '', // 기본 배경색
+                color: '' // 기본 글자색
+            };
+        },
     },
 }
 </script>

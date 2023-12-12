@@ -4,7 +4,7 @@
 			<div class="flex-column">
 				<div class="title-box">
 					<img class="dpg-logo" src="https://github.com/msa-ez/cloud-iq/assets/149130268/1d4667a1-b6b7-47ef-a07c-94dc0da510b2" />
-					<div class="main-title">클라우드 네이티브 전환 가이드라인</div>
+					<div class="main-title">클라우드 네이티브 전환 가이드라인( Beta )</div>
 					<img class="iq-logo" src="https://github.com/msa-ez/cloud-iq/assets/149130268/66649787-f394-49f9-8a72-8002997161c6" />
 				</div>
 				<v-row>
@@ -62,7 +62,7 @@ export default {
 			this.$router.push(path);
 		},
         goToallGuide() {
-            this.$router.push('/allGuide/');
+            this.$router.push('/all-guide');
         }
 	},
 };
